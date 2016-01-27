@@ -22,4 +22,3 @@ server <- function(input, output, session) {
     proxy <- leafletProxy("myMap", data = STI_2)
   })
 }
-runApp(shinyApp(ui, server)) 
