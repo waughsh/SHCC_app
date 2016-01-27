@@ -1,7 +1,7 @@
 library(shiny)
 server <- function(input, output, session) {
   filteredData <- reactive({
-    STI_2[STI_2$visit.year==input$year & STI_2$visit.month_n >= input$range[1] & STI_2$visit.month_n <= input$range[2],]
+    STI_2[STI_2$visit.month_n >= input$range[1] & STI_2$visit.month_n <= input$range[2],]
   })
   output$myMap <- renderLeaflet(
     leaflet(STI_2) %>% addTiles('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', 
