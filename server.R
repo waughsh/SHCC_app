@@ -13,9 +13,9 @@ server <- function(input, output, session) {
       clearShapes() %>%
       clearMarkerClusters() %>%
       addCircles(weight = 3, radius=15, 
-                 color="#ffa500", stroke = TRUE, fillOpacity = 0.8,group="STI-Points",popup = paste("Date:", STI_2$date, "<br>",
-                                                                                                    "Gender:", STI_2$sex,"<br>",
-                                                                                                    "Diagnosis:", STI_2$diag)) %>%
+                 color="#ffa500", stroke = TRUE, fillOpacity = 0.8,group="STI-Points",popup = paste("Date:", date, "<br>",
+                                                                                                    "Gender:", sex,"<br>",
+                                                                                                    "Diagnosis:", diag)) %>%
       addMarkers(clusterOptions = markerClusterOptions(),icon=NULL, group="STI-Clusters") %>%
       addLayersControl(
         overlayGroups = c("STI-Points", "STI-Clusters"), options = layersControlOptions(collapsed = FALSE), position=c("bottomright"))
